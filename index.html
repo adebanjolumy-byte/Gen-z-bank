@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gen Z Bank — Sandbox</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<div id="auth">
+  <main class="auth-card">
+    <div class="logo">GEN<span>Z</span> BANK</div>
+    <div class="demo">SANDBOX / DEMO — NO REAL MONEY</div>
+
+    <section id="signup">
+      <h1>Create Account</h1>
+      <input id="suName" placeholder="FULL NAME">
+      <input id="suPhone" placeholder="PHONE NUMBER">
+      <input id="suEmail" type="email" placeholder="EMAIL ADDRESS">
+      <input id="suLoginPin" inputmode="numeric" maxlength="6" type="password" placeholder="6 DIGIT PIN">
+      <input id="suTransferPin" inputmode="numeric" maxlength="4" type="password" placeholder="4 DIGIT TRANSFER PIN">
+      <button onclick="signup()">CREATE ACCOUNT</button>
+      <p>Already registered? <a onclick="showLogin()">Login</a></p>
+    </section>
+
+    <section id="login" class="hide">
+      <h1>Welcome Back</h1>
+      <input id="liIdentity" placeholder="PHONE NUMBER OR EMAIL">
+      <input id="liPin" inputmode="numeric" maxlength="6" type="password" placeholder="6 DIGIT PIN">
+      <button onclick="login()">LOGIN</button>
+      <p>New user? <a onclick="showSignup()">Create an account</a></p>
+    </section>
+  </main>
+</div>
+
+<div id="app" class="hide">
+  <header>
+    <div class="logo">GEN<span>Z</span> BANK</div>
+    <button class="logout" onclick="logout()">LOGOUT</button>
+  </header>
+
+  <main class="wrap">
+    <div class="welcome">
+      <h1 id="hello"></h1>
+      <p>Manage your sandbox account.</p>
+    </div>
+
+    <div class="balance-card">
+      <small>AVAILABLE DEMO BALANCE</small>
+      <strong>₦<span id="balance">0</span></strong>
+      <span id="accountHolder"></span>
+    </div>
+
+    <div class="actions">
+      <button onclick="openTransfer()">💸<b>Transfer</b></button>
+      <button onclick="openDeposit()">💰<b>Deposit</b></button>
+      <button onclick="scrollHistory()">📜<b>History</b></button>
+      <button onclick="whatsapp()">💬<b>Customer Care</b></button>
+    </div>
+
+    <div class="support">
+      Customer care
+      <a href="https://wa.me/2348036233499" target="_blank">WhatsApp 08036233499</a>
+    </div>
+
+    <section class="panel" id="history">
+      <h2>Transaction History</h2>
+      <div id="transactions">No transactions yet.</div>
+    </section>
+  </main>
+</div>
+
+<div id="modal" class="modal hide"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
